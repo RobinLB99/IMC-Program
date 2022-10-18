@@ -1,0 +1,25 @@
+Index: src/paquete_principal/datos.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/paquete_principal/datos.java b/src/paquete_principal/datos.java
+--- a/src/paquete_principal/datos.java	
++++ b/src/paquete_principal/datos.java	(date 1661753586493)
+@@ -166,7 +166,6 @@
+                                 if (opc == 1) {
+                                     exportar("".concat((String) listaTemp.get(1)).concat((String) listaTemp.get(2)).concat(".txt"), (String) listaTemp.get(1), (String) listaTemp.get(2), (Integer) listaTemp.get(3), (Double) listaTemp.get(4), (Double) listaTemp.get(5), imc, detalle);
+ 
+-                                    Out.println("Archivo creado. Datos exportados con exito");
+                                     Main.pressToContinue();
+                                 }
+                                 else if (opc == 2) {
+@@ -306,6 +305,8 @@
+ 
+             wr.close();
+             bw.close();
++            Out.println("Archivo creado. Datos exportados con exito");
++
+         } catch (IOException e) {
+ 
+         }

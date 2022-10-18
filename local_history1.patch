@@ -1,0 +1,225 @@
+Index: src/paquete_principal/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/paquete_principal/Main.java b/src/paquete_principal/Main.java
+--- a/src/paquete_principal/Main.java	
++++ b/src/paquete_principal/Main.java	(date 1661701085251)
+@@ -12,7 +12,7 @@
+     static BufferedReader buffer = new BufferedReader(in);
+     static int dato;
+ 
+-    private static void menu() {
++    static void menu() {
+         int valido = 0;
+         String temp;
+ 
+@@ -34,7 +34,7 @@
+                         if (datosMostrados){
+                             datos.seleccionarPersona();
+                         }
+-                        volverAlMenu();
++                        Preguntar.volverAlMenu();
+                         break;
+ 
+                     case 2:
+@@ -46,7 +46,7 @@
+                         Out.println("\nEliminar una persona\n--------------------");
+                         datos.eliminarPersona();
+                         pressToContinue();
+-                        volverAlMenu();
++                        Preguntar.volverAlMenu();
+                         break;
+ 
+                     case 4:
+@@ -66,70 +66,9 @@
+                 valido = 1;
+             }
+ 
+-        } while (valido == 1);
+-    }
+-
+-    static void volverAlMenu() {
+-        Out.flush();
+-        int valido = 0;
+-        String temp;
+-
+-        do {
+-            Out.println("\nQue desea hacer?\n* Salir del programa.(1)    * Volver al menu.(2)");
+-            try {
+-                temp = buffer.readLine();
+-                int opc = Integer.parseInt(temp);
+-
+-                if (opc == 1){
+-                    Out.println("El programa va a cerrarse!");
+-                    pressToContinue();
+-                    System.exit(0);
+-
+-                } else if (opc == 2){
+-                    menu();
+-
+-                } else {
+-                    Out.println("\nNo eligio una opcion valida\n");
+-                    pressToContinue();
+-                    valido = 1;
+-                }
+-
+-            } catch (Exception e){
+-                valido = 1;
+-                Out.println("\nNo eligio una opcion valida\n");
+-                pressToContinue();
+-            }
+-
+         } while (valido == 1);
+     }
+-
+-    public static void ingresarOtroDato() {
+-        Out.flush();
+-        int repetir;
+-
+-        do{
+-            repetir = 0;
+-            Out.println("\nDesea ingresar mas datos\n* Si.(1)   * No.(2)");
+-            try {
+-                int YN = Integer.parseInt(buffer.readLine());
+-                if (YN == 1) {
+-                    datos.ingresarDatos();
+-                } else if (YN == 2) {
+-                    volverAlMenu();
+-                }
+-                else {
+-                    repetir = 1;
+-                    Out.println("No escogio una opcion valida");
+-                    pressToContinue();
+-                }
+-            } catch (IOException a){
+-                repetir = 1;
+-                Out.println("No se puede ingresar caracteres que no sean numericos");
+-                pressToContinue();
+-            }
+-        } while (repetir == 1);
+-    }
+-
++    
+     static public void pressToContinue() {
+         String seguir;
+         try {
+Index: src/paquete_principal/datos.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/paquete_principal/datos.java b/src/paquete_principal/datos.java
+--- a/src/paquete_principal/datos.java	
++++ b/src/paquete_principal/datos.java	(date 1661753586493)
+@@ -100,7 +100,7 @@
+ 
+         DatosIMC.add(temp.clone());
+         temp.clear();
+-        Main.ingresarOtroDato();
++        Preguntar.ingresarOtroDato();
+     }
+ 
+     // Mostrar una lista de los datos ingresados --------------------------------
+@@ -157,7 +157,6 @@
+                         Main.pressToContinue();
+ 
+                         boolean volverAExportar;
+-
+                         do {
+                             volverAExportar = false;
+                             Out.println("Desea exportar los datos seleccionados a un archivo de texto?\nSi(1)   No(2)");
+@@ -266,7 +265,7 @@
+                                 repetir = true;
+                             }
+                             else if (siNo == 2) {
+-                                Main.volverAlMenu();
++                                Preguntar.volverAlMenu();
+                             }
+                             else {
+                                 volverAPreguntar = true;
+Index: src/paquete_principal/Preguntar.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/paquete_principal/Preguntar.java b/src/paquete_principal/Preguntar.java
+--- a/src/paquete_principal/Preguntar.java	
++++ b/src/paquete_principal/Preguntar.java	(date 1661819636869)
+@@ -1,4 +1,75 @@
+ package paquete_principal;
+ 
++import java.io.BufferedReader;
++import java.io.IOException;
++import java.io.InputStreamReader;
++import java.io.PrintStream;
++import java.util.Scanner;
++
+ public class Preguntar {
++    static PrintStream Out = new PrintStream(System.out);
++    static Scanner keyPress = new Scanner(System.in);
++    static InputStreamReader in = new InputStreamReader(System.in);
++    static BufferedReader buffer = new BufferedReader(in);
++   
++    static void volverAlMenu() {
++        Out.flush();
++        int valido = 0;
++        String temp;
++
++        do {
++            Out.println("\nQue desea hacer?\n* Salir del programa.(1)    * Volver al menu.(2)");
++            try {
++                temp = buffer.readLine();
++                int opc = Integer.parseInt(temp);
++
++                if (opc == 1){
++                    Out.println("El programa va a cerrarse!");
++                    Main.pressToContinue();
++                    System.exit(0);
++
++                } else if (opc == 2){
++                    Main.menu();
++
++                } else {
++                    Out.println("\nNo eligio una opcion valida\n");
++                    Main.pressToContinue();
++                    valido = 1;
++                }
++
++            } catch (Exception e){
++                valido = 1;
++                Out.println("\nNo eligio una opcion valida\n");
++                Main.pressToContinue();
++            }
++
++        } while (valido == 1);
++    }
++
++    public static void ingresarOtroDato() {
++        Out.flush();
++        int repetir;
++
++        do{
++            repetir = 0;
++            Out.println("\nDesea ingresar mas datos\n* Si.(1)   * No.(2)");
++            try {
++                int YN = Integer.parseInt(buffer.readLine());
++                if (YN == 1) {
++                    datos.ingresarDatos();
++                } else if (YN == 2) {
++                    volverAlMenu();
++                }
++                else {
++                    repetir = 1;
++                    Out.println("No escogio una opcion valida");
++                    Main.pressToContinue();
++                }
++            } catch (IOException a){
++                repetir = 1;
++                Out.println("No se puede ingresar caracteres que no sean numericos");
++                Main.pressToContinue();
++            }
++        } while (repetir == 1);
++    }
+ }

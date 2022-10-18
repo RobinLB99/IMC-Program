@@ -1,0 +1,8 @@
+--- Indice de masa corporal ---
+Nombre ----- : Joel
+Apellido --- : Boero
+Edad ------- : 21 años
+Peso ------- : 59.0 kg
+Estatura --- : 1.78 m
+IMC -------- : 19
+Detalle ---- : Su peso es normal!

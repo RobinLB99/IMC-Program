@@ -1,0 +1,8 @@
+--- Indice de masa corporal ---
+Nombre ----- : Robin
+Apellido --- : Lugo
+Edad ------- : 22 años
+Peso ------- : 58.0 kg
+Estatura --- : 1.81 m
+IMC -------- : 18
+Detalle ---- : Tiene delgades leve!

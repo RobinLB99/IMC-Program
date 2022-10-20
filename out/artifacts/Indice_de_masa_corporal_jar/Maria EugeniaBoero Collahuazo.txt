@@ -1,0 +1,8 @@
+--- Indice de masa corporal ---
+Nombre ----- : Maria Eugenia
+Apellido --- : Boero Collahuazo
+Edad ------- : 50 años
+Peso ------- : 89.0 kg
+Estatura --- : 1.69 m
+IMC -------- : 31
+Detalle ---- : Tiene obecidad leve!

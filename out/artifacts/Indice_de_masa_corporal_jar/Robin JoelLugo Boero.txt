@@ -1,0 +1,8 @@
+--- Indice de masa corporal ---
+Nombre ----- : Robin Joel
+Apellido --- : Lugo Boero
+Edad ------- : 21 años
+Peso ------- : 49.0 kg
+Estatura --- : 1.81 m
+IMC -------- : 15
+Detalle ---- : Tiene delgades severa!

@@ -5,15 +5,14 @@ import java.io.*;
 
 public class Datos {
     static PrintStream Out = new PrintStream(System.out);
-
     public static LinkedList<Object> DatosIMC = new LinkedList<>();
     static LinkedList<Object> temp = new LinkedList<>();
     static InputStreamReader in = new InputStreamReader(System.in);
     static BufferedReader buffer = new BufferedReader(in);
 
     static boolean datosMostrados;
-
     static int id = 0;
+
     // Ingresar un nuevo dato --------------------------------------------------
     static void ingresarDatos() {
         int valido = 1;
@@ -269,13 +268,13 @@ public class Datos {
             PrintWriter wr = new PrintWriter(bw);
 
             wr.write("--- Indice de masa corporal ---\n");
-            wr.write("Nombre ----- : ".concat(nombre).concat("\n"));
-            wr.write("Apellido --- : ".concat(apellido).concat("\n"));
-            wr.write("Edad ------- : ".concat(String.valueOf(edad)).concat(" años\n"));
-            wr.write("Peso ------- : ".concat(String.valueOf(peso)).concat(" kg\n"));
-            wr.write("Estatura --- : ".concat(String.valueOf(estatura)).concat(" m\n"));
-            wr.write("IMC -------- : ".concat(String.valueOf(imc)).concat("\n"));
-            wr.write("Detalle ---- : ".concat(detalle));
+            wr.write("Nombre - : ".concat(nombre).concat("\n"));
+            wr.write("Apellido : ".concat(apellido).concat("\n"));
+            wr.write("Edad --- : ".concat(String.valueOf(edad)).concat(" años\n"));
+            wr.write("Peso --- : ".concat(String.valueOf(peso)).concat(" kg\n"));
+            wr.write("Estatura : ".concat(String.valueOf(estatura)).concat(" m\n"));
+            wr.write("IMC ---- : ".concat(String.valueOf(imc)).concat("\n"));
+            wr.write("Detalle  : ".concat(detalle));
 
             wr.close();
             bw.close();

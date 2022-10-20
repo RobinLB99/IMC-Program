@@ -1,8 +1,0 @@
---- Indice de masa corporal ---
-Nombre ----- : Maria
-Apellido --- : Boero
-Edad ------- : 50 años
-Peso ------- : 78.0 kg
-Estatura --- : 1.69 m
-IMC -------- : 27
-Detalle ---- : Tiene sobrepeso!

@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact type="jar" build-on-make="true" name="Indice de masa corporal:jar">
+  <artifact type="jar" name="Indice de masa corporal:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/Indice_de_masa_corporal_jar</output-path>
     <root id="archive" name="Indice de masa corporal.jar">
       <element id="module-output" name="Indice de masa corporal" />
